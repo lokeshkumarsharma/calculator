@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+    <style type="text/css">
+        body{
+            margin-top: 50px;
+			margin-left: 400px;
+			border:solid black 8px;
+			width:500px;
+			text-align:center;
+        }
+		#lok{
+			background-color:#484848 ;
+		
+		}
+	
+		
+        button
+        {
+            font-family: "VERDANA";
+			font-size: larger;
+            width:80px;
+            height:40px;
+            margin:20px;
+			
+        }
+        input
+        {
+			
+        	width:400px;
+            height:100px;
+            color:#666999;
+			border:solid black 8px;
+			
+        }
+        form
+        {
+            margin: 0 auto; 
+            width:600px;
+        }
+        
+		#do{
+            width: 400px;
+            margin: 20px auto;
+			background-color:#484848 ;
+        }
+    </style>
+    <script type="text/javascript">
+    function editDisplay(e)
+    {
+		
+	     
+      document.getElementById("Input").value += e;
+	    
+    }
+	
+		
+		
+	
+    function showResult(total)
+    {
+		
+		
+        if(total != undefined && total != Infinity)
+        {
+         
+		  document.getElementById("Input").value = total ;
+        }
+		
+        else
+        {
+            alert("Provide Proper Expression...");
+        }
+    }
+	
+	
+	
+    </script>
+</head>
+<center>
+<body>
+
+    <form id="form1" style="text-align:center;">
+    <table>
+        <tr>
+            <td>
+                <input type="text" style="font-size: larger; text-align: left; padding: 20px" id="Input" size="16" />
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+			
+				
+			
+			
+				<button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="showResult(Math.sin(document.getElementById('Input').value));return false">
+                    sin
+                </button>
+				
+				<button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="showResult(Math.cos(document.getElementById('Input').value));return false">
+                    cos
+                </button>
+				
+				<button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="showResult(Math.tan(document.getElementById('Input').value));return false">
+                    tan
+                </button>
+				
+				
+				<button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('.')">
+                    .
+                </button>
+				</br>
+				
+			   	
+				<button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="showResult(Math.pow(document.getElementById('Input').value,2));return false">
+                    X^2
+                </button>
+				
+				<button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="showResult(Math.pow(document.getElementById('Input').value,3));return false">
+                    X^3
+                </button>
+                
+                
+				<button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="showResult(Math.log(document.getElementById('Input').value));return false">
+                    log
+                </button>
+				
+				
+				<button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="document.getElementById('Input').value = document.getElementById('Input').value.substring(0, document.getElementById('Input').value.length - 1)">
+                    DEL
+				</button>
+
+				</br>
+
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('1')">
+				1
+				</button>
+				
+                <button type="button" class="btn btn-primary active btn-lg"  id="lok" onclick="editDisplay('2')">
+                    2
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('3')">
+                    3
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('+')">
+                    +
+                </button>
+                <br />
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('4')">
+                    4
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('5')">
+                    5
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" bgcolor="#000000" onclick="editDisplay('6')">
+                    6
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('-')">
+                    -
+                </button>
+                <br />
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('7')">
+                    7
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('8')">
+                    8
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('9')">
+                    9
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('*')">
+                    *
+                </button>
+                <br />
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="document.getElementById('Input').value = ''">
+                    C
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('0')">
+                    0
+                </button>
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="showResult(Math.sqrt(eval(document.getElementById('Input').value)));return false">
+				 sqrt
+				
+                </button>
+				
+                <button type="button" class="btn btn-primary active btn-lg" id="lok" onclick="editDisplay('/')">
+                    /
+                </button>
+                <br />
+				
+				
+                
+                
+                <button type="button" id ="do" class="btn btn-primary btn-block btn-lg" onclick="showResult(eval(document.getElementById('Input').value));return false">
+                    =
+                </button>
+						
+
+				
+	
+				
+            </td>
+        </tr>
+    </table>
+    </form>
+
+</body>
+	</center>
+</html>
